@@ -1,77 +1,88 @@
-// Ładowanie tekstu z pliku (np. cytatów lub opisu z pliku tekstowego)
 document.addEventListener("DOMContentLoaded", () => {
-    const textContainer = document.getElementById("text-container");
+  const textContainer = document.getElementById("text-container");
 
-    if (textContainer) {
-        fetch("ipsum.txt")
-            .then(response => {
-                if (!response.ok) throw new Error("Błąd podczas ładowania pliku");
-                return response.text();
-            })
-            .then(data => {
-                textContainer.textContent = data;
-            })
-            .catch(error => {
-                console.error("Wystąpił błąd:", error);
-                textContainer.textContent = "Nie udało się załadować tekstu.";
-            });
-    }
-});
-function adjustForGoogleTranslateBanner() {
-  const gtBanner = document.querySelector('.goog-te-banner-frame.skiptranslate');
-  if (gtBanner) {
-    // Daj czas na załadowanie iframe
-    setTimeout(() => {
-      document.body.style.paddingTop = '40px'; // albo inna wysokość paska
-    }, 500);
+  if (textContainer) {
+    fetch("ipsum.txt")
+      .then(response => {
+        if (!response.ok) throw new Error("Błąd podczas ładowania pliku");
+        return response.text();
+      })
+      .then(data => {
+        textContainer.textContent = data;
+      })
+      .catch(error => {
+        console.error("Wystąpił błąd:", error);
+        textContainer.textContent = "Nie udało się załadować tekstu.";
+      });
   }
-}
 
-// Wywołaj po załadowaniu tłumacza
-window.addEventListener('load', () => {
-  adjustForGoogleTranslateBanner();
+  // Cookie banner handling
+  const cookieBanner = document.getElementById('cookie-banner');
+  const cookieAccepted = localStorage.getItem('cookiesAccepted');
+
+  if (cookieBanner) {
+    console.log('Baner cookies znaleziony, cookiesAccepted:', cookieAccepted);
+    if (!cookieAccepted) {
+      cookieBanner.style.display = 'block';
+    }
+
+    document.getElementById('accept-cookies').addEventListener('click', () => {
+      localStorage.setItem('cookiesAccepted', 'true');
+      cookieBanner.style.display = 'none';
+      console.log('Cookies zaakceptowane');
+    });
+
+    document.getElementById('reject-cookies').addEventListener('click', () => {
+      localStorage.setItem('cookiesAccepted', 'false');
+      cookieBanner.style.display = 'none';
+      console.log('Cookies odrzucone');
+    });
+
+    document.getElementById('learn-more-cookies').addEventListener('click', () => {
+      window.open('/polityka-prywatnosci.html', '_blank', 'noopener,noreferrer');
+      console.log('Kliknięto "Dowiedz się więcej"');
+    });
+  } else {
+    console.error('Baner cookies (#cookie-banner) nie znaleziony w DOM');
+  }
+
+  // Smooth scroll for internal links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: "smooth"
+        });
+        // Zachowaj hash w URL bez przeładowania
+        history.pushState(null, null, this.getAttribute("href"));
+      }
+    });
+  });
 });
 
-// Google Translate – dodanie tłumacza
+// Google Translate Initialization
 window.googleTranslateElementInit = function () {
-    new google.translate.TranslateElement({
-        pageLanguage: 'pl',
-        includedLanguages: 'pl,en',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
+  new google.translate.TranslateElement({
+    pageLanguage: 'pl',
+    includedLanguages: 'pl,en',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
 };
 
+// Dynamiczne ładowanie skryptu Google Translate
 document.addEventListener("DOMContentLoaded", () => {
+  if (!document.getElementById('google-translate-script')) {
     const gtScript = document.createElement('script');
+    gtScript.id = 'google-translate-script';
     gtScript.type = 'text/javascript';
     gtScript.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
     document.body.appendChild(gtScript);
+  }
 });
 
-// Utrzymanie hash po zmianie języka
-document.addEventListener("change", function (e) {
-    if (e.target.className === "goog-te-combo") {
-        const currentHash = window.location.hash;
-        setTimeout(() => {
-            window.location.hash = currentHash;
-            location.reload();
-        }, 500);
-    }
-});
-
-// Smooth scroll do sekcji (jeśli nie używasz Bootstrap ScrollSpy)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
-    });
-});
-
+// Usuwanie banneru Google Translate
 function removeGoogleTranslateBanner() {
   const gtFrame = document.querySelector('.goog-te-banner-frame.skiptranslate');
   if (gtFrame) {
@@ -85,38 +96,8 @@ function removeGoogleTranslateBanner() {
   document.documentElement.style.paddingTop = '0';
 }
 
-// Wywołaj zaraz po załadowaniu strony
 window.addEventListener('load', () => {
   removeGoogleTranslateBanner();
+  // Dodajemy jednorazowe sprawdzenie po krótkim opóźnieniu
+  setTimeout(removeGoogleTranslateBanner, 1000);
 });
-
-// Google czasem dynamicznie dodaje banner po zmianie języka
-// więc powtarzaj co sekundę przez 5 sekund
-let tries = 0;
-const maxTries = 5;
-const interval = setInterval(() => {
-  removeGoogleTranslateBanner();
-  tries++;
-  if (tries >= maxTries) clearInterval(interval);
-}, 1000);
-// Sprawdzenie czy użytkownik już zaakceptował lub odrzucił cookies
-const cookieBanner = document.getElementById('cookie-banner');
-const accepted = localStorage.getItem('cookiesAccepted');
-const rejected = localStorage.getItem('cookiesRejected');
-
-if (!accepted && !rejected) {
-  cookieBanner.style.display = 'block';
-}
-
-document.getElementById('accept-cookies').addEventListener('click', () => {
-  localStorage.setItem('cookiesAccepted', 'true');
-  cookieBanner.style.display = 'none';
-  // Tu możesz też wywołać kod uruchamiający np. analitykę itp.
-});
-
-document.getElementById('reject-cookies').addEventListener('click', () => {
-  localStorage.setItem('cookiesRejected', 'true');
-  cookieBanner.style.display = 'none';
-  // Tu możesz ewentualnie wyłączyć cookies, jeśli masz coś takiego
-});
-

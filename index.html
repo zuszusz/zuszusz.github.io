@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Oscary - Historia i Zwycięzcy</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
     <script defer src="js/script.js"></script>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="50">
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="50" tabindex="0">
 
     <!-- NAVIGATION -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm" id="navbar">
-        <div id="google_translate_element"></div>
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.png" alt="Logo" height="40">
-                Oscary
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="images/logo.png" alt="Logo" height="40" class="me-2" />
+                <span>Oscary</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#history">Oscary 2025</a></li>
@@ -32,26 +41,33 @@
                     <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
                 </ul>
             </div>
+
+            <!-- Google Translate widget na prawo od nawigacji -->
+            <div id="google_translate_element" class="ms-3 align-self-center" aria-label="Wybór języka"></div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-<header class="hero-section text-white text-center d-flex justify-content-center align-items-center"
+    <header
+        class="hero-section text-white text-center d-flex justify-content-center align-items-center"
         style="
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/tlo-czarne.jpg') no-repeat center center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('images/tlo-czarne.jpg') no-repeat center center;
             background-size: cover;
-        ">
-    <div>
-        <h1>Witaj na stronie Oscarów!</h1>
-        <p>Odkryj historię, zwycięzców, ikoniczne momenty oraz galerię z ceremonii wręczenia Oscarów!</p>
-        <a href="#history" class="btn btn-light btn-lg">Zaczynajmy</a>
-    </div>
-</header>
-
+        "
+        tabindex="0"
+        aria-label="Sekcja powitalna"
+    >
+        <div>
+            <h1>Witaj na stronie Oscarów!</h1>
+            <p>Odkryj historię, zwycięzców, ikoniczne momenty oraz galerię z ceremonii wręczenia Oscarów!</p>
+            <a href="#history" class="btn btn-light btn-lg" role="button">Zaczynajmy</a>
+        </div>
+    </header>
 
     <!-- HISTORY SECTION -->
-    <section id="history" class="py-5 bg-light text-center">
+    <section id="history" class="py-5 bg-light text-center" tabindex="0" aria-label="Historia Oscarów">
         <div class="container">
             <h2>Historia Oscarów</h2>
             <p>Oscary zostały po raz pierwszy wręczone w 1929 roku przez Akademię Sztuki i Wiedzy Filmowej. Od tego czasu stały się jednym z najważniejszych wydarzeń w przemyśle filmowym, honorując najlepsze osiągnięcia w kinie.</p>
@@ -59,31 +75,31 @@
     </section>
 
     <!-- WINNERS SECTION -->
-    <section id="winners" class="py-5">
+    <section id="winners" class="py-5" tabindex="0" aria-label="Zwycięzcy Oscarów">
         <div class="container text-center">
             <h2>Zwycięzcy Oscarów</h2>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <h4>2025 - Najlepszy Film</h4>
                     <p><strong>Film A</strong></p>
-                    <img src="images/film_a.jpg" class="img-fluid" alt="Film A">
+                    <img src="images/film_a.jpg" class="img-fluid rounded" alt="Film A" />
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <h4>2025 - Najlepszy Reżyser</h4>
                     <p><strong>Reżyser B</strong></p>
-                    <img src="images/director_b.jpg" class="img-fluid" alt="Reżyser B">
+                    <img src="images/director_b.jpg" class="img-fluid rounded" alt="Reżyser B" />
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <h4>2025 - Najlepsza Aktorka</h4>
                     <p><strong>Aktorka C</strong></p>
-                    <img src="images/actress_c.jpg" class="img-fluid" alt="Aktorka C">
+                    <img src="images/actress_c.jpg" class="img-fluid rounded" alt="Aktorka C" />
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ICONIC MOMENTS SECTION -->
-    <section id="moments" class="py-5 bg-light">
+    <section id="moments" class="py-5 bg-light" tabindex="0" aria-label="Ikoniczne momenty">
         <div class="container text-center">
             <h2>Ikoniczne Moment</h2>
             <ul class="list-unstyled">
@@ -95,37 +111,37 @@
     </section>
 
     <!-- GALLERY SECTION -->
-    <section id="gallery" class="py-5">
+    <section id="gallery" class="py-5" tabindex="0" aria-label="Galeria zdjęć">
         <div class="container text-center">
             <h2>Galeria</h2>
             <div class="row">
-                <div class="col-md-4">
-                    <img src="images/oscar1.jpg" class="img-fluid" alt="Galeria 1">
+                <div class="col-md-4 mb-3">
+                    <img src="images/oscar1.jpg" class="img-fluid rounded" alt="Galeria 1" />
                 </div>
-                <div class="col-md-4">
-                    <img src="images/oscar2.jpg" class="img-fluid" alt="Galeria 2">
+                <div class="col-md-4 mb-3">
+                    <img src="images/oscar2.jpg" class="img-fluid rounded" alt="Galeria 2" />
                 </div>
-                <div class="col-md-4">
-                    <img src="images/oscar3.jpg" class="img-fluid" alt="Galeria 3">
+                <div class="col-md-4 mb-3">
+                    <img src="images/oscar3.jpg" class="img-fluid rounded" alt="Galeria 3" />
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PREDICTIONS SECTION -->
-    <section id="predictions" class="py-5 bg-light">
+    <section id="predictions" class="py-5 bg-light" tabindex="0" aria-label="Przewidywania">
         <div class="container text-center">
             <h2>Przewidywania na przyszłość</h2>
             <p>Jakie filmy i osoby mają szansę na Oscarów w przyszłości? Podziel się swoimi przewidywaniami!</p>
-            <form>
-                <input type="text" class="form-control mb-2" placeholder="Twoje przewidywania" required>
+            <form id="prediction-form" novalidate>
+                <input type="text" class="form-control mb-2" placeholder="Twoje przewidywania" required aria-required="true" />
                 <button type="submit" class="btn btn-primary">Wyślij przewidywanie</button>
             </form>
         </div>
     </section>
 
     <!-- CATEGORIES SECTION -->
-    <section id="categories" class="py-5">
+    <section id="categories" class="py-5" tabindex="0" aria-label="Kategorie Oscarowe">
         <div class="container text-center">
             <h2>Kategorie Oscarowe</h2>
             <p>Oscary przyznawane są w wielu kategoriach, m.in.:</p>
@@ -142,7 +158,7 @@
     </section>
 
     <!-- RECORDS SECTION -->
-    <section id="records" class="py-5 bg-light">
+    <section id="records" class="py-5 bg-light" tabindex="0" aria-label="Rekordy Oscarowe">
         <div class="container text-center">
             <h2>Rekordy Oscarowe</h2>
             <ul class="list-unstyled">
@@ -154,13 +170,13 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="py-5 bg-light text-center">
+    <section id="contact" class="py-5 bg-light text-center" tabindex="0" aria-label="Formularz kontaktowy">
         <div class="container">
             <h2>Kontakt</h2>
-            <form>
-                <input type="text" class="form-control mb-2" placeholder="Imię" required>
-                <input type="email" class="form-control mb-2" placeholder="Email" required>
-                <textarea class="form-control mb-2" placeholder="Wiadomość" rows="4" required></textarea>
+            <form id="contact-form" novalidate>
+                <input type="text" class="form-control mb-2" placeholder="Imię" required aria-required="true" />
+                <input type="email" class="form-control mb-2" placeholder="Email" required aria-required="true" />
+                <textarea class="form-control mb-2" placeholder="Wiadomość" rows="4" required aria-required="true"></textarea>
                 <button type="submit" class="btn btn-primary">Wyślij</button>
             </form>
         </div>
@@ -176,25 +192,34 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener("click", function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth"
-                });
+                const target = document.querySelector(this.getAttribute("href"));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
             });
         });
+
         function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'pl',
-        includedLanguages: 'pl,en',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-}
+            new google.translate.TranslateElement({
+                pageLanguage: 'pl',
+                includedLanguages: 'pl,en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
     </script>
-<div id="cookie-banner">
-  Ta strona używa plików cookies, aby poprawić jakość użytkowania.
-  <a href="polityka-prywatnosci.html" target="_blank" id="learn-more">Dowiedz się więcej</a>
-  <button id="accept-cookies">Akceptuję</button>
-  <button id="reject-cookies">Odrzuć</button>
-</div>
+
+    <!-- Google Translate API -->
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" role="region" aria-live="polite" aria-label="Informacja o plikach cookies" class="cookie-banner">
+        Ta strona używa plików cookies, aby poprawić jakość użytkowania.
+        <a href="polityka-prywatnosci.html" target="_blank" id="learn-more" tabindex="0">Dowiedz się więcej</a>
+        <button id="accept-cookies" aria-label="Akceptuję pliki cookies">Akceptuję</button>
+        <button id="reject-cookies" aria-label="Odrzucam pliki cookies">Odrzuć</button>
+    </div>
 
 </body>
 </html>

@@ -1,189 +1,153 @@
-/* style.css */
-
 /* Resetowanie marginesów i czcionki */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* zapobiega poziomemu scrollowi */
+  background-color: #fff;
+  color: #222;
 }
 
 h2 {
-    margin-bottom: 1.5rem;
-    font-weight: bold;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #111;
+}
+
+/* Nawigacja */
+.navbar {
+  position: relative;
+  z-index: 1100; /* Wyższy niż Google Translate widget */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #d4af37;
+  outline: none;
 }
 
 /* Hero sekcja */
 .hero-section {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/tlo-czarne.jpg') no-repeat center center;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-    transition: background-size 0.8s ease-in-out;
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/tlo-czarne.jpg') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  transition: background-size 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 .hero-section:hover {
-    background-size: 110%;
+  background-size: 110%;
 }
 
 /* Sekcje */
 section {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    transition: background-color 0.5s ease-in-out;
+  padding: 80px 1rem;
+  transition: background-color 0.5s ease-in-out;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Galeria */
 #gallery img {
-    border-radius: 12px;
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  margin: 0.5rem;
+  cursor: pointer;
+  display: inline-block;
 }
 
 #gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 /* Formularze */
 form input,
 form textarea {
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    padding: 12px;
-    font-size: 1rem;
-    transition: border-color 0.3s;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+  margin-bottom: 1rem;
 }
 
 form input:focus,
 form textarea:focus {
-    border-color: #007bff;
-    outline: none;
+  border-color: #d4af37;
+  outline: none;
 }
 
 /* Przycisk */
 .btn-primary {
-    background-color: #d4af37;
-    border: none;
-    color: #000;
-    font-weight: bold;
+  background-color: #d4af37;
+  border: none;
+  color: #000;
+  font-weight: 700;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
 }
 
-.btn-primary:hover {
-    background-color: #b98c00;
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #b98c00;
+  outline: none;
 }
 
-/* Nawigacja */
-.navbar-dark .navbar-nav .nav-link {
-    color: #fff;
-    transition: color 0.3s;
-}
-
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #d4af37;
-}
-
-/* Sekcja kolorowa */
+/* Sekcje kolorowe */
 .bg-light {
-    background-color: #f8f9fa !important;
+  background-color: #f8f9fa !important;
+  color: #222;
 }
 
 .bg-dark {
-    background-color: #343a40 !important;
+  background-color: #343a40 !important;
+  color: #eee;
 }
 
 .bg-primary {
-    background-color: #1c1c1c !important;
+  background-color: #1c1c1c !important;
+  color: #fff;
 }
 
 /* Animacje fade-in dla sekcji */
 .fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
 }
 
 @keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Baner cookies */
-#cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    z-index: 1000;
-    display: none;
-}
-
-#cookie-banner button {
-    background-color: #d4af37;
-    border: none;
-    color: #000;
-    padding: 8px 16px;
-    margin-left: 10px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#cookie-banner button:hover {
-    background-color: #b98c00;
-}
-
-#google_translate_element {
-  position: fixed;
-  bottom: 1rem;
-  left: 1rem;
-  z-index: 1050;
-}
-
-/* Pozycjonowanie i styl widgetu */
-.translate-widget {
-  position: fixed;
-  bottom: 1.5rem; /* lewy dolny róg, 1.5rem od dołu */
-  left: 1.5rem;   /* 1.5rem od lewej */
-  z-index: 1050;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 0.3rem;
-  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-  padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
-  user-select: none;
-}
-
-/* Minimalne dostosowanie do selecta */
-.translate-widget select {
-  border: none;
-  background: transparent;
-  font-size: 0.875rem;
-  cursor: pointer;
-  outline: none;
-  padding: 0.15rem 0.3rem;
-}
-
-.goog-te-banner-frame.skiptranslate {
-  display: none !important;
-  height: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
-body, html {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  overflow-x: hidden; /* zapobiega poziomemu scrollowi */
-}
 #cookie-banner {
   position: fixed;
   bottom: 0;
@@ -199,14 +163,17 @@ body, html {
   box-sizing: border-box;
 }
 
-#cookie-banner a#learn-more {
+#cookie-banner a#learn-more-cookies {
   color: #d4af37;
   text-decoration: underline;
   margin: 0 15px;
+  cursor: pointer;
 }
 
-#cookie-banner a#learn-more:hover {
+#cookie-banner a#learn-more-cookies:hover,
+#cookie-banner a#learn-more-cookies:focus {
   color: #b98c00;
+  outline: none;
 }
 
 #cookie-banner button {
@@ -215,12 +182,63 @@ body, html {
   color: #000;
   padding: 8px 16px;
   margin-left: 10px;
-  font-weight: bold;
+  font-weight: 700;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-#cookie-banner button:hover {
+#cookie-banner button:hover,
+#cookie-banner button:focus {
   background-color: #b98c00;
+  outline: none;
+}
+
+/* Google Translate widget */
+#google_translate_element {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1050;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 0.3rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  user-select: none;
+}
+
+#google_translate_element select {
+  border: none;
+  background: transparent;
+  font-size: 0.875rem;
+  cursor: pointer;
+  outline: none;
+  padding: 0.15rem 0.3rem;
+}
+
+/* Ukrycie oryginalnego bannera Google */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+  height: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  #gallery img {
+    max-width: 90vw;
+    margin: 0.5rem auto;
+    display: block;
+  }
+
+  form input,
+  form textarea {
+    max-width: 100%;
+  }
+
+  .hero-section {
+    padding: 0 1rem;
+  }
 }
