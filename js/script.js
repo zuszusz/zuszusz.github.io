@@ -17,6 +17,20 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 });
+function adjustForGoogleTranslateBanner() {
+  const gtBanner = document.querySelector('.goog-te-banner-frame.skiptranslate');
+  if (gtBanner) {
+    // Daj czas na załadowanie iframe
+    setTimeout(() => {
+      document.body.style.paddingTop = '40px'; // albo inna wysokość paska
+    }, 500);
+  }
+}
+
+// Wywołaj po załadowaniu tłumacza
+window.addEventListener('load', () => {
+  adjustForGoogleTranslateBanner();
+});
 
 // Google Translate – dodanie tłumacza
 window.googleTranslateElementInit = function () {
@@ -57,3 +71,52 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+function removeGoogleTranslateBanner() {
+  const gtFrame = document.querySelector('.goog-te-banner-frame.skiptranslate');
+  if (gtFrame) {
+    gtFrame.style.display = 'none';
+    gtFrame.style.height = '0';
+    gtFrame.style.visibility = 'hidden';
+  }
+  document.body.style.marginTop = '0';
+  document.body.style.paddingTop = '0';
+  document.documentElement.style.marginTop = '0';
+  document.documentElement.style.paddingTop = '0';
+}
+
+// Wywołaj zaraz po załadowaniu strony
+window.addEventListener('load', () => {
+  removeGoogleTranslateBanner();
+});
+
+// Google czasem dynamicznie dodaje banner po zmianie języka
+// więc powtarzaj co sekundę przez 5 sekund
+let tries = 0;
+const maxTries = 5;
+const interval = setInterval(() => {
+  removeGoogleTranslateBanner();
+  tries++;
+  if (tries >= maxTries) clearInterval(interval);
+}, 1000);
+// Sprawdzenie czy użytkownik już zaakceptował lub odrzucił cookies
+const cookieBanner = document.getElementById('cookie-banner');
+const accepted = localStorage.getItem('cookiesAccepted');
+const rejected = localStorage.getItem('cookiesRejected');
+
+if (!accepted && !rejected) {
+  cookieBanner.style.display = 'block';
+}
+
+document.getElementById('accept-cookies').addEventListener('click', () => {
+  localStorage.setItem('cookiesAccepted', 'true');
+  cookieBanner.style.display = 'none';
+  // Tu możesz też wywołać kod uruchamiający np. analitykę itp.
+});
+
+document.getElementById('reject-cookies').addEventListener('click', () => {
+  localStorage.setItem('cookiesRejected', 'true');
+  cookieBanner.style.display = 'none';
+  // Tu możesz ewentualnie wyłączyć cookies, jeśli masz coś takiego
+});
+
