@@ -7,49 +7,47 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="js/script.js"></script>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="50">
-
+<div id="google_translate_element" style="position: fixed; top: 10px; right: 10px; z-index: 1050;"></div>
     <!-- NAVIGATION -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm" id="navbar">
         <div class="container">
-            <a class="navbar-brand" href="#">Oscary</a>
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="Logo" height="40">
+                Oscary
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#history">Historia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#winners">Zwycięzcy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#moments">Ikoniczne Moment</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Galeria</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#predictions">Przewidywania</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Kontakt</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#history">Oscary 2025</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#winners">Historia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#moments">Kategorie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#records">Głosowanie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <header class="hero-section bg-primary text-white text-center d-flex justify-content-center align-items-center" style="height: 100vh; background-image: url('images/oscar-hero.jpg'); background-size: cover;">
-        <div>
-            <h1>Witaj na stronie Oscarów!</h1>
-            <p>Odkryj historię, zwycięzców, ikoniczne momenty oraz galerię z ceremonii wręczenia Oscarów!</p>
-            <a href="#history" class="btn btn-light btn-lg">Zaczynajmy</a>
-        </div>
-    </header>
+<header class="hero-section text-white text-center d-flex justify-content-center align-items-center"
+        style="
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/tlo-czarne.jpg') no-repeat center center;
+            background-size: cover;
+        ">
+    <div>
+        <h1>Witaj na stronie Oscarów!</h1>
+        <p>Odkryj historię, zwycięzców, ikoniczne momenty oraz galerię z ceremonii wręczenia Oscarów!</p>
+        <a href="#history" class="btn btn-light btn-lg">Zaczynajmy</a>
+    </div>
+</header>
+
 
     <!-- HISTORY SECTION -->
     <section id="history" class="py-5 bg-light text-center">
@@ -125,6 +123,35 @@
         </div>
     </section>
 
+    <!-- CATEGORIES SECTION -->
+    <section id="categories" class="py-5">
+        <div class="container text-center">
+            <h2>Kategorie Oscarowe</h2>
+            <p>Oscary przyznawane są w wielu kategoriach, m.in.:</p>
+            <ul class="list-unstyled">
+                <li>Najlepszy Film</li>
+                <li>Najlepszy Aktor / Aktorka</li>
+                <li>Najlepszy Reżyser</li>
+                <li>Najlepszy Scenariusz Oryginalny</li>
+                <li>Najlepsza Muzyka Filmowa</li>
+                <li>Najlepszy Film Animowany</li>
+                <li>i wiele innych...</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- RECORDS SECTION -->
+    <section id="records" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2>Rekordy Oscarowe</h2>
+            <ul class="list-unstyled">
+                <li>Najwięcej Oscarów zdobył film "Ben-Hur", "Titanic" i "Władca Pierścieni: Powrót Króla" (po 11 statuetek).</li>
+                <li>Meryl Streep - najwięcej nominacji aktorskich (21).</li>
+                <li>Walt Disney - najwięcej Oscarów indywidualnych (22 wygrane).</li>
+            </ul>
+        </div>
+    </section>
+
     <!-- CONTACT SECTION -->
     <section id="contact" class="py-5 bg-light text-center">
         <div class="container">
@@ -143,17 +170,23 @@
         <p>&copy; 2025 Oscary. Wszystkie prawa zastrzeżone.</p>
     </footer>
 
-    <!-- JS for smooth scrolling -->
+    <!-- Smooth Scrolling Script -->
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener("click", function (e) {
                 e.preventDefault();
-
                 document.querySelector(this.getAttribute("href")).scrollIntoView({
                     behavior: "smooth"
                 });
             });
         });
+        function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'pl',
+        includedLanguages: 'pl,en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
     </script>
 </body>
 </html>
