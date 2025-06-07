@@ -38,7 +38,6 @@
                     <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
                 </ul>
             </div>
-            <div id="google_translate_element" class="ms-3 align-self-center" aria-label="Wybór języka"></div>
         </div>
     </nav>
     <header
@@ -376,21 +375,30 @@
             <img src="images/oscar-mini.png" alt="Oscar" class="footer-oscar me-2">
             <span>&copy; 2025 Złote Kadry. Wszystkie prawa zastrzeżone.</span>
         </div>
-        <div>
-            <a href="polityka-prywatnosci.html" class="footer-link text-white-50 me-3" target="_blank">Polityka prywatności</a>
-            <a href="#kontakt" class="footer-link text-white-50">Kontakt</a>
-        </div>
     </div>
 </footer>
-
-<div id="cookie-banner" class="cookie-banner-custom">
-    <div class="d-flex align-items-center flex-nowrap gap-2 justify-content-center">
-        <img src="images/oscar-mini.png" alt="" class="cookie-oscar d-none d-md-inline">
-        <span>
-            Ta strona używa plików cookies, aby poprawić jakość użytkowania.
-            <a href="polityka-prywatnosci.html" target="_blank" class="cookie-link">Dowiedz się więcej</a>
-        </span>
-        <button id="accept-cookies" class="btn btn-primary odkryj-btn btn-sm ms-2" aria-label="Akceptuję pliki cookies">Akceptuję</button>
-        <button id="reject-cookies" class="btn btn-outline-secondary odkryj-btn btn-sm ms-2" aria-label="Odrzucam pliki cookies">Odrzuć</button>
+<div id="google_translate_element" aria-label="Wybór języka"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'pl',
+      includedLanguages: 'pl,en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<div id="cookie-banner" class="cookie-banner">
+    <img src="images/oscar-mini.png" alt="" class="cookie-oscar d-inline">
+    <span class="cookie-text">
+        Ta strona używa plików cookies, aby poprawić jakość użytkowania.
+        <a href="polityka-prywatnosci.html" target="_blank" class="cookie-link">Dowiedz się więcej</a>
+    </span>
+    <div>
+        <button id="accept-cookies" class="btn btn-primary btn-sm mx-1" aria-label="Akceptuję pliki cookies">Akceptuję</button>
+        <button id="reject-cookies" class="btn btn-outline-secondary btn-sm mx-1" aria-label="Odrzucam pliki cookies">Odrzuć</button>
     </div>
 </div>
+<script src="script.js"></script>
+</body>
+</html>
