@@ -514,4 +514,16 @@ body {
   top: 0 !important;
 }
 
+iframe.goog-te-banner-frame,
+body > .skiptranslate {
+  display: none !important;
+  height: 0 !important;
+  visibility: hidden !important;
+}
+
+html {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -37,14 +37,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const acceptBtn = document.getElementById("accept-cookies");
     const rejectBtn = document.getElementById("reject-cookies");
 
-    function hideCookieBanner() {
-        if (cookieBanner) {
-            cookieBanner.style.display = "none";
-        }
-    }
+        console.log("acceptBtn:", acceptBtn);
+    console.log("rejectBtn:", rejectBtn);
 
-    if (acceptBtn) acceptBtn.addEventListener("click", hideCookieBanner);
-    if (rejectBtn) rejectBtn.addEventListener("click", hideCookieBanner);
+    // Sprawdzenie, czy decyzja jest już zapisana
+if (localStorage.getItem('accept-cookies') === 'true' || localStorage.getItem('reject-cookies') === 'true') {
+  cookieBanner.style.display = 'none';
+  return;
+}
+
+acceptBtn.addEventListener('click', function() {
+  localStorage.setItem('accept-cookies', 'true');
+  cookieBanner.style.display = 'none';
+});
+
+rejectBtn.addEventListener('click', function() {
+  localStorage.setItem('reject-cookies', 'true');
+  cookieBanner.style.display = 'none';
+});
+
+});
 
     // Smooth scroll dla odnośników wewnętrznych
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -56,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-});
 
 // Inicjalizacja Google Translate (globalnie)
 function googleTranslateElementInit() {
