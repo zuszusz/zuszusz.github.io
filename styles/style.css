@@ -474,17 +474,7 @@ body h1 {
   color: #fff;
 }
 
-#google_translate_element {
-  background: #fffbe7;
-  border-radius: 1em;
-  padding: 0.5em 1.2em;
-  box-shadow: 0 2px 8px rgba(218, 165, 32, 0.1);
-  display: inline-block;
-  font-weight: 600;
-  margin-left: 1em;
-  border: 2px solid #e6c200;
-}
-
+/* Ukrycie logo Google i niepotrzebnych elementów */
 .goog-logo-link,
 .goog-te-gadget span {
   display: none !important;
@@ -494,6 +484,7 @@ body h1 {
   color: #bfa100 !important;
   font-family: inherit !important;
   font-weight: 600 !important;
+  text-align: right; /* wyśrodkowanie w obrębie prawej części stopki */
 }
 
 .goog-te-combo {
@@ -504,8 +495,15 @@ body h1 {
   color: #5a4300;
   font-weight: 600;
   font-size: 1em;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin: 0 !important;
+}
+
+body .goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
 }
 
 body .goog-te-banner-frame.skiptranslate {
