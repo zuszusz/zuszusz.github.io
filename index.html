@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Oscary - Historia i Zwycięzcy</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script defer src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Złote Kadry</title>
+    <meta name="description" content="Wszystko, co musisz wiedzieć o najbardziej prestiżowych nagrodach filmowych Ameryki!">
+    <meta name="keywords" content="oscary hollywood kino">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="50" tabindex="0">
-
-    <!-- NAVIGATION -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm" id="navbar">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="images/logo.png" alt="Logo" height="40" class="me-2" />
-                <span>Oscary</span>
+                <img src="images/logo.png" alt="Logo" class="w-100" style="object-fit: contain; height: 4rem;">
+                <!-- <span>Złote Kadry</span> -->
             </a>
-
             <button
                 class="navbar-toggler"
                 type="button"
@@ -26,200 +23,374 @@
                 data-bs-target="#navbarNav"
                 aria-controls="navbarNav"
                 aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#history">Oscary 2025</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#winners">Historia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#moments">Kategorie</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">Galeria</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#records">Głosowanie</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#2025">Tegoroczna gala</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kategorie">Kategorie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#historia">Kronika Oscarów</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#rekordy">Rekordy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Złote Kadry</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#glosy">Głos Publiczności</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kalendarz">Terminarz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
                 </ul>
             </div>
-
-            <!-- Google Translate widget na prawo od nawigacji -->
             <div id="google_translate_element" class="ms-3 align-self-center" aria-label="Wybór języka"></div>
         </div>
     </nav>
-
-    <!-- HERO SECTION -->
     <header
         class="hero-section text-white text-center d-flex justify-content-center align-items-center"
-        style="
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-            url('images/tlo-czarne.jpg') no-repeat center center;
-            background-size: cover;
-        "
         tabindex="0"
-        aria-label="Sekcja powitalna"
-    >
+        aria-label="Sekcja powitalna">
         <div>
-            <h1>Witaj na stronie Oscarów!</h1>
-            <p>Odkryj historię, zwycięzców, ikoniczne momenty oraz galerię z ceremonii wręczenia Oscarów!</p>
-            <a href="#history" class="btn btn-light btn-lg" role="button">Zaczynajmy</a>
+            <h1>Oscary: Największy spektakl kina</h1>
+            <p>Zanurz się w świat gwiazd, epickich historii i momentów, które przeszły do legendy. Tutaj magia filmu żyje wiecznie.</p>
+            <a href="#2025" class="btn btn-light btn-lg odkryj-btn d-inline-flex align-items-center" role="button">
+            Odkryj więcej
+            <img src="images/oscar-mini.png" alt="Oscar" class="oscar-icon ms-2">
+            </a>
         </div>
     </header>
-
-    <!-- HISTORY SECTION -->
-    <section id="history" class="py-5 bg-light text-center" tabindex="0" aria-label="Historia Oscarów">
-        <div class="container">
-            <h2>Historia Oscarów</h2>
-            <p>Oscary zostały po raz pierwszy wręczone w 1929 roku przez Akademię Sztuki i Wiedzy Filmowej. Od tego czasu stały się jednym z najważniejszych wydarzeń w przemyśle filmowym, honorując najlepsze osiągnięcia w kinie.</p>
-        </div>
     </section>
-
-    <!-- WINNERS SECTION -->
-    <section id="winners" class="py-5" tabindex="0" aria-label="Zwycięzcy Oscarów">
-        <div class="container text-center">
-            <h2>Zwycięzcy Oscarów</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h4>2025 - Najlepszy Film</h4>
-                    <p><strong>Film A</strong></p>
-                    <img src="images/film_a.jpg" class="img-fluid rounded" alt="Film A" />
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h4>2025 - Najlepszy Reżyser</h4>
-                    <p><strong>Reżyser B</strong></p>
-                    <img src="images/director_b.jpg" class="img-fluid rounded" alt="Reżyser B" />
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h4>2025 - Najlepsza Aktorka</h4>
-                    <p><strong>Aktorka C</strong></p>
-                    <img src="images/actress_c.jpg" class="img-fluid rounded" alt="Aktorka C" />
-                </div>
+    <section id="2025" class="py-5 bg-light" tabindex="0" aria-label="Tegoroczna gala">
+     <div class="container text-center">
+            <h2>Tegoroczna gala</h2>
+            <div class="section-subtitle mb-3 d-flex align-items-center justify-content-center gap-2 mb-4">
+                <img src="images/oscar-mini.png" alt="Ikona Oscar" class="subtitle-icon">
+                <span>
+                    Oscary 2025 już za nami — i jak co roku, nie zabrakło emocji, wzruszeń i filmowej magii. Czerwony dywan znów rozbłysnął blaskiem gwiazd, a złote statuetki trafiły w ręce najlepszych z najlepszych. Były zaskakujące werdykty, wybitne przemówienia i momenty, które przejdą do historii kina. Przypomnij sobie, jak wyglądała ta wyjątkowa noc – od triumfatorów po najpiękniejsze kadry gali.
+                </span>
+                <img src="images/oscar-mini.png" alt="Ikona Oscar" class="subtitle-icon">
             </div>
-        </div>
-    </section>
-
-    <!-- ICONIC MOMENTS SECTION -->
-    <section id="moments" class="py-5 bg-light" tabindex="0" aria-label="Ikoniczne momenty">
-        <div class="container text-center">
-            <h2>Ikoniczne Moment</h2>
-            <ul class="list-unstyled">
-                <li>1. Wzruszające przemówienie Meryl Streep w 2012 roku.</li>
-                <li>2. Zaskakujące zwycięstwo "Parasite" w 2020 roku.</li>
-                <li>3. "La La Land" i pomyłka przy ogłoszeniu Najlepszego Filmu (2017).</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- GALLERY SECTION -->
-    <section id="gallery" class="py-5" tabindex="0" aria-label="Galeria zdjęć">
-        <div class="container text-center">
-            <h2>Galeria</h2>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <img src="images/oscar1.jpg" class="img-fluid rounded" alt="Galeria 1" />
+            <img src="images/02032025.png" alt="Najważniejsze informacje" class="main-info-img">
+            <p class="lead mb-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a justo dui. Pellentesque sem mi, cursus et risus non, pharetra dapibus ligula. Donec tincidunt porta orci varius vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean felis quam, hendrerit eget congue quis, congue id urna. Vestibulum cursus massa rutrum lobortis placerat. Pellentesque porta pellentesque massa, sit amet viverra odio facilisis vel. Pellentesque ligula lacus, consequat vitae faucibus quis, tempus vel risus. Pellentesque iaculis nunc nec nisi aliquam, id aliquam turpis cursus. Nulla ut sodales nisi. Nullam lacinia nisi sit amet massa porta venenatis. Etiam tristique, nibh vitae gravida tempor, turpis sapien posuere magna, porta gravida lorem ligula et nibh. Sed tempus est sit amet nisi tempor, in efficitur sem ultrices. Nulla a tempor sem. Nullam malesuada sodales maximus. Donec sed lacinia diam, vitae tempus urna. Suspendisse ut mollis dolor. Curabitur pulvinar finibus dolor, quis molestie lacus vestibulum sit amet. Sed sed diam sit amet massa condimentum porttitor. Cras aliquam, tortor a congue eleifend, nisi mauris luctus sem. 
+            </p>
+            <div id="galaCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/oscars2025-1.jpg" class="d-block w-100 rounded" alt="Gala 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/oscars2025-2.jpg" class="d-block w-100 rounded" alt="Gala 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/oscars2025-3.jpg" class="d-block w-100 rounded" alt="Gala 3">
+                    </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <img src="images/oscar2.jpg" class="img-fluid rounded" alt="Galeria 2" />
+                <button class="carousel-control-prev" type="button" data-bs-target="#galaCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Poprzednie</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#galaCarousel" data-bs-slide="next">
+                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                 <span class="visually-hidden">Następne</span>
+                </button>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <img src="images/oscar3.jpg" class="img-fluid rounded" alt="Galeria 3" />
                 </div>
-            </div>
-        </div>
     </section>
-
-    <!-- PREDICTIONS SECTION -->
-    <section id="predictions" class="py-5 bg-light" tabindex="0" aria-label="Przewidywania">
-        <div class="container text-center">
-            <h2>Przewidywania na przyszłość</h2>
-            <p>Jakie filmy i osoby mają szansę na Oscarów w przyszłości? Podziel się swoimi przewidywaniami!</p>
-            <form id="prediction-form" novalidate>
-                <input type="text" class="form-control mb-2" placeholder="Twoje przewidywania" required aria-required="true" />
-                <button type="submit" class="btn btn-primary">Wyślij przewidywanie</button>
-            </form>
+    <section id="kategorie" class="py-5" aria-label="Kategorie">
+  <div class="container text-center">
+    <h2>Kategorie Oscarów</h2>
+    <div class="row g-4 mt-4"> 
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="kategoria-karta p-4 h-100">
+          <img src="images/oscar-mini.png" alt="Oscar" class="oscar-icon ms-2">
+          <h4>Sztuka i Kreacja</h4>
+          <ul class="list-unstyled">
+            <li>Najlepszy Film</li>
+            <li>Najlepszy Reżyser</li>
+            <li>Najlepszy Aktor</li>
+            <li>Najlepsza Aktorka</li>
+            <li>Najlepszy Aktor Drugoplanowy</li>
+            <li>Najlepsza Aktorka Drugoplanowa</li>
+            <li>Najlepszy Scenariusz Oryginalny</li>
+            <li>Najlepszy Scenariusz Adaptowany</li>
+            <li>Najlepszy Film Międzynarodowy</li>
+            <li>Najlepszy Film Animowany</li>
+            <li>Najlepszy Krótkometrażowy Film Aktorski</li>
+            <li>Najlepszy Krótkometrażowy Film Animowany</li>
+            <li>Najlepszy Krótkometrażowy Film Dokumentalny</li>
+            <li>Najlepszy Pełnometrażowy Film Dokumentalny</li>
+          </ul>
         </div>
-    </section>
-
-    <!-- CATEGORIES SECTION -->
-    <section id="categories" class="py-5" tabindex="0" aria-label="Kategorie Oscarowe">
-        <div class="container text-center">
-            <h2>Kategorie Oscarowe</h2>
-            <p>Oscary przyznawane są w wielu kategoriach, m.in.:</p>
-            <ul class="list-unstyled">
-                <li>Najlepszy Film</li>
-                <li>Najlepszy Aktor / Aktorka</li>
-                <li>Najlepszy Reżyser</li>
-                <li>Najlepszy Scenariusz Oryginalny</li>
-                <li>Najlepsza Muzyka Filmowa</li>
-                <li>Najlepszy Film Animowany</li>
-                <li>i wiele innych...</li>
-            </ul>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="kategoria-karta p-4 h-100">
+          <img src="images/oscar-mini.png" alt="Oscar" class="oscar-icon ms-2">
+          <h4>Technika i Efekty</h4>
+          <ul class="list-unstyled">
+            <li>Najlepsze Zdjęcia</li>
+            <li>Najlepszy Montaż</li>
+            <li>Najlepsza Scenografia</li>
+            <li>Najlepsze Kostiumy</li>
+            <li>Najlepsza Charakteryzacja i Fryzury</li>
+            <li>Najlepsze Efekty Specjalne</li>
+          </ul>
         </div>
-    </section>
+      </div>
 
-    <!-- RECORDS SECTION -->
-    <section id="records" class="py-5 bg-light" tabindex="0" aria-label="Rekordy Oscarowe">
-        <div class="container text-center">
-            <h2>Rekordy Oscarowe</h2>
-            <ul class="list-unstyled">
-                <li>Najwięcej Oscarów zdobył film "Ben-Hur", "Titanic" i "Władca Pierścieni: Powrót Króla" (po 11 statuetek).</li>
-                <li>Meryl Streep - najwięcej nominacji aktorskich (21).</li>
-                <li>Walt Disney - najwięcej Oscarów indywidualnych (22 wygrane).</li>
-            </ul>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="kategoria-karta p-4 h-100">
+          <img src="images/oscar-mini.png" alt="Oscar" class="oscar-icon ms-2">
+          <h4>Muzyka i Dźwięk</h4>
+          <ul class="list-unstyled">
+            <li>Najlepsza Piosenka</li>
+            <li>Najlepsza Muzyka Oryginalna</li>
+            <li>Najlepszy Dźwięk</li>
+          </ul>
         </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="py-5 bg-light text-center" tabindex="0" aria-label="Formularz kontaktowy">
-        <div class="container">
-            <h2>Kontakt</h2>
-            <form id="contact-form" novalidate>
-                <input type="text" class="form-control mb-2" placeholder="Imię" required aria-required="true" />
-                <input type="email" class="form-control mb-2" placeholder="Email" required aria-required="true" />
-                <textarea class="form-control mb-2" placeholder="Wiadomość" rows="4" required aria-required="true"></textarea>
-                <button type="submit" class="btn btn-primary">Wyślij</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="py-4 bg-dark text-white text-center">
-        <p>&copy; 2025 Oscary. Wszystkie prawa zastrzeżone.</p>
-    </footer>
-
-    <!-- Smooth Scrolling Script -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener("click", function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute("href"));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: "smooth"
-                    });
-                }
-            });
-        });
-
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'pl',
-                includedLanguages: 'pl,en',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-
-    <!-- Google Translate API -->
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
-
-    <!-- Cookie Banner -->
-    <div id="cookie-banner" role="region" aria-live="polite" aria-label="Informacja o plikach cookies" class="cookie-banner">
-        Ta strona używa plików cookies, aby poprawić jakość użytkowania.
-        <a href="polityka-prywatnosci.html" target="_blank" id="learn-more" tabindex="0">Dowiedz się więcej</a>
-        <button id="accept-cookies" aria-label="Akceptuję pliki cookies">Akceptuję</button>
-        <button id="reject-cookies" aria-label="Odrzucam pliki cookies">Odrzuć</button>
+      </div>
     </div>
+  </div>
+</section>
 
-</body>
-</html>
+    <section id="historia" class="py-5 bg-light text-center" tabindex="0" aria-label="Kronika Oscarów">
+    <div class="container">
+        <h2>Historia Oscarów</h2>
+        <!-- Okres 1929-1949 -->
+        <div class="row align-items-center my-5">
+            <div class="col-md-6 text-start">
+                <h3>Lata 1929–1949: Narodziny legendy</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a justo dui. Pellentesque sem mi, cursus et risus non, pharetra dapibus ligula. Donec tincidunt porta orci varius vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean felis quam, hendrerit eget congue quis, congue id urna. Vestibulum cursus massa rutrum lobortis placerat. Pellentesque porta pellentesque massa, sit amet viverra odio facilisis vel. Pellentesque ligula lacus, consequat vitae faucibus quis, tempus vel risus. Pellentesque iaculis nunc nec nisi aliquam, id aliquam turpis cursus. Nulla ut sodales nisi. Nullam lacinia nisi sit amet massa porta venenatis. Etiam tristique, nibh vitae gravida tempor, turpis sapien posuere magna, porta gravida lorem ligula et nibh. Sed tempus est sit amet nisi tempor, in efficitur sem ultrices. Nulla a tempor sem. Nullam malesuada sodales maximus. Donec sed lacinia diam, vitae tempus urna. Suspendisse ut mollis dolor. Curabitur pulvinar finibus dolor, quis molestie lacus vestibulum sit amet. Sed sed diam sit amet massa condimentum porttitor. Cras aliquam, tortor a congue eleifend, nisi mauris luctus sem. 
+                </p>
+            </div>
+            <div class="col-md-6">
+                <figure>
+                <img src="images/oscars1920.jpg" class="img-fluid rounded shadow" alt="Pierwsza gala rozdania Oscarów">
+                <figcaption class="mt-2 text-muted small">Pierwsza gala rozdania Oscarów, 1929</figcaption>
+                </figure>
+            </div>
+        </div>
+        <!-- Okres 1950-1979 -->
+        <div class="row align-items-center my-5 flex-md-row-reverse">
+            <div class="col-md-6 text-start">
+                <h3>Lata 1950–1979: Złota era Hollywood</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a justo dui. Pellentesque sem mi, cursus et risus non, pharetra dapibus ligula. Donec tincidunt porta orci varius vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean felis quam, hendrerit eget congue quis, congue id urna. Vestibulum cursus massa rutrum lobortis placerat. Pellentesque porta pellentesque massa, sit amet viverra odio facilisis vel. Pellentesque ligula lacus, consequat vitae faucibus quis, tempus vel risus. Pellentesque iaculis nunc nec nisi aliquam, id aliquam turpis cursus. Nulla ut sodales nisi. Nullam lacinia nisi sit amet massa porta venenatis. Etiam tristique, nibh vitae gravida tempor, turpis sapien posuere magna, porta gravida lorem ligula et nibh. Sed tempus est sit amet nisi tempor, in efficitur sem ultrices. Nulla a tempor sem. Nullam malesuada sodales maximus. Donec sed lacinia diam, vitae tempus urna. Suspendisse ut mollis dolor. Curabitur pulvinar finibus dolor, quis molestie lacus vestibulum sit amet. Sed sed diam sit amet massa condimentum porttitor. Cras aliquam, tortor a congue eleifend, nisi mauris luctus sem, sit amet fringilla ante purus eget nisi. Nulla non vulputate augue. Integer in aliquet velit. Integer vehicula augue in justo volutpat, vitae semper ligula tempor. Praesent non sollicitudin nunc. Nullam eu cursus turpis. Curabitur sed tincidunt eros, in scelerisque tortor. Fusce a eros porttitor, vehicula eros eget, porta ex.
+                </p>
+          </div>
+          <div class="col-md-6">
+              <figure>
+                  <img src="images/oscars1950.jpg" class="img-fluid rounded shadow" alt="Złota era Oscarów">
+                  <figcaption class="mt-2 text-muted small">"Wszystko o Ewie", 1950</figcaption>
+               </figure>
+         </div>
+    </div>
+        <!-- Okres 1980-1999 -->
+        <div class="row align-items-center my-5">
+            <div class="col-md-6 text-start">
+                <h3>Lata 1980–1999: Nowoczesność i rekordy</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a justo dui. Pellentesque sem mi, cursus et risus non, pharetra dapibus ligula. Donec tincidunt porta orci varius vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean felis quam, hendrerit eget congue quis, congue id urna. Vestibulum cursus massa rutrum lobortis placerat. Pellentesque porta pellentesque massa, sit amet viverra odio facilisis vel. Pellentesque ligula lacus, consequat vitae faucibus quis, tempus vel risus. Pellentesque iaculis nunc nec nisi aliquam, id aliquam turpis cursus. Nulla ut sodales nisi. Nullam lacinia nisi sit amet massa porta venenatis. Etiam tristique, nibh vitae gravida tempor, turpis sapien posuere magna, porta gravida lorem ligula et nibh. Sed tempus est sit amet nisi tempor, in efficitur sem ultrices. Nulla a tempor sem. Nullam malesuada sodales maximus. Donec sed lacinia diam, vitae tempus urna. Suspendisse ut mollis dolor. Curabitur pulvinar finibus dolor, quis molestie lacus vestibulum sit amet. Sed sed diam sit amet massa condimentum porttitor. Cras aliquam, tortor a congue eleifend, nisi mauris luctus sem, sit amet fringilla ante purus eget nisi. Nulla non vulputate augue. Integer in aliquet velit. Integer vehicula augue in justo volutpat, vitae semper ligula tempor. Praesent non sollicitudin nunc. Nullam eu cursus turpis. Curabitur sed tincidunt eros, in scelerisque.
+                </p>
+            </div>
+            <div class="col-md-6">
+            <figure>
+                <img src="images/oscars1980.jpg" class="img-fluid rounded shadow" alt="Oscary lata 80.">
+                <figcaption class="mt-2 text-muted small">52. Gala rozdania Oscarów, 1980</figcaption>
+            </figure>
+            </div>
+        </div>
+        <!-- Okres 2000+ -->
+        <div class="row align-items-center my-5 flex-md-row-reverse">
+            <div class="col-md-6 text-start">
+                <h3>Od 2000 roku: Globalizacja i różnorodność</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a justo dui. Pellentesque sem mi, cursus et risus non, pharetra dapibus ligula. Donec tincidunt porta orci varius vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean felis quam, hendrerit eget congue quis, congue id urna. Vestibulum cursus massa rutrum lobortis placerat. Pellentesque porta pellentesque massa, sit amet viverra odio facilisis vel. Pellentesque ligula lacus, consequat vitae faucibus quis, tempus vel risus. Pellentesque iaculis nunc nec nisi aliquam, id aliquam turpis cursus. Nulla ut sodales nisi. Nullam lacinia nisi sit amet massa porta venenatis. Etiam tristique, nibh vitae gravida tempor, turpis sapien posuere magna, porta gravida lorem ligula et nibh. Sed tempus est sit amet nisi tempor, in efficitur sem ultrices. Nulla a tempor sem. Nullam malesuada sodales maximus. Donec sed lacinia diam, vitae tempus urna. Suspendisse ut mollis dolor. Curabitur pulvinar finibus dolor, quis molestie lacus vestibulum sit amet. Sed sed diam sit amet massa condimentum porttitor. Cras aliquam, tortor a congue eleifend, nisi mauris luctus sem, sit amet fringilla ante purus eget nisi. Nulla non vulputate augue. Integer in aliquet velit. Integer vehicula augue in justo volutpat, vitae semper ligula tempor. Praesent non sollicitudin nunc. Nullam eu cursus turpis. Curabitur sed tincidunt eros, in scelerisque tortor. Fusce a eros porttitor, vehicula eros eget, porta ex.
+                </p>
+            </div>
+            <div class="col-md-6">
+            <figure>
+                <img src="images/oscars2000.jpg" class="img-fluid rounded shadow" alt="Oscary XXI wieku">
+                <figcaption class="mt-2 text-muted small">Angelina Jolie, 2000</figcaption>
+            </figure>
+            </div>
+        </div>
+    </div>
+    <section id="rekordy" class="py-5 kategorie-bg" tabindex="0" aria-label="Najwięksi z Największych">
+    <div class="container text-center">
+        <h2>Najwięksi z Największych</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a justo dui. Pellentesque sem mi, cursus et risus non, pharetra dapibus ligula. Donec tincidunt porta orci varius vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean felis quam, hendrerit eget congue quis, congue id urna. Vestibulum cursus massa rutrum lobortis placerat. Pellentesque porta pellentesque massa, sit amet viverra odio facilisis vel. Pellentesque ligula lacus, consequat vitae faucibus quis, tempus vel risus. Pellentesque iaculis nunc nec nisi aliquam, id aliquam turpis cursus. Nulla ut sodales nisi. Nullam lacinia nisi sit amet massa porta venenatis. Etiam tristique, nibh vitae gravida tempor, turpis sapien posuere magna, porta gravida lorem ligula et nibh. Sed tempus est sit amet nisi tempor, in efficitur sem ultrices. Nulla a tempor sem.
+        </p>
+        <div class="row justify-content-center align-items-end podium-row">
+            <div class="col-4 d-flex flex-column align-items-center">
+                <div class="podium-step step-2 mb-2">
+                    <img src="images/rekordy2.jpg" alt="2 miejsce" class="podium-img step-2 mb-2">
+                    <div class="fw-bold">2. Katharine Hepburn</div>
+                    <div class="small text-muted">4 Oscary, 12 nominacji</div>
+                </div>
+            </div>
+            <div class="col-4 d-flex flex-column align-items-center">
+                <div class="podium-step step-1 mb-2">
+                    <img src="images/rekordy1.jpg" alt="1 miejsce" class="podium-img mb-2">
+                    <div class="fw-bold">1. Walt Disney</div>
+                    <div class="small text-muted">26 Oscarów, 59 nominacji</div>
+                </div>
+            </div>
+            <div class="col-4 d-flex flex-column align-items-center">
+                <div class="podium-step step-3 mb-2">
+                    <img src="images/rekordy3.jpg" alt="3 miejsce" class="podium-img step-3 mb-2">
+                    <div class="fw-bold">3. Meryl Streep</div>
+                    <div class="small text-muted">3 Oscary, 21 nominacji</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+   <section id="galeria" class="py-5" tabindex="0" aria-label="Złote kadry">
+    <div class="container text-center">
+        <h2>Złote Kadry</h2>
+        <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <img src="images/oscar1.jpg" class="img-fluid rounded mb-2 gallery-img" alt="Galeria 1">
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <img src="images/oscar2.jpg" class="img-fluid rounded mb-2 gallery-img" alt="Galeria 2">
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3 d-none d-md-block">
+                            <img src="images/oscar3.jpg" class="img-fluid rounded mb-2 gallery-img" alt="Galeria 3">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <img src="images/oscar4.jpg" class="img-fluid rounded mb-2 gallery-img" alt="Galeria 4">
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <img src="images/oscar5.jpg" class="img-fluid rounded mb-2 gallery-img" alt="Galeria 5">
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3 d-none d-md-block">
+                            <img src="images/oscar6.jpg" class="img-fluid rounded mb-2 gallery-img" alt="Galeria 6">
+                        </div>
+                    </div>
+                </div>
+                <!-- Dodaj kolejne carousel-item jeśli masz więcej zdjęć -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Poprzednie</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Następne</span>
+            </button>
+        </div>
+    </div>
+</section>
+    <section id="glosy" class="py-5" tabindex="0" aria-label="Głos Publiczności">
+    <div class="container text-center">
+        <div class="publicznosc-box mx-auto p-4 p-md-5 my-4">
+            <h2>Głos Publiczności</h2>
+            <p>Jakie filmy i osoby mają szansę na Oscarów w przyszłości? Podziel się swoimi przewidywaniami!</p>
+            <form id="prediction-form" action="https://formspree.io/f/xkgboanv" method="POST">
+                <input type="text" name="message" class="form-control mb-2" placeholder="Twoje przewidywania" required aria-required="true">
+                <button type="submit" class="btn btn-primary">Wyślij swój głos</button>
+            </form>
+        </div>
+    </div>
+</section>
+   <section id="kalendarz" class="py-5" tabindex="0" aria-label="Terminarz">
+    <div class="container">
+        <h2 class="text-center mb-5">Oś czasu Oscarów</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a justo dui. Pellentesque sem mi, cursus et risus non, pharetra dapibus ligula. Donec tincidunt porta orci varius vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean felis quam, hendrerit eget congue quis, congue id urna. Vestibulum cursus massa rutrum lobortis placerat. Pellentesque porta pellentesque massa, sit amet viverra odio facilisis vel. Pellentesque ligula lacus, consequat vitae faucibus quis, tempus vel risus. Pellentesque iaculis nunc nec nisi aliquam, id aliquam turpis cursus. Nulla ut sodales nisi. Nullam lacinia nisi sit amet massa porta venenatis. Etiam tristique, nibh vitae gravida tempor, turpis sapien posuere magna, porta gravida lorem ligula et nibh. Sed tempus est sit amet nisi tempor, in efficitur sem ultrices. Nulla a tempor sem.
+        </p>
+        <div class="timeline mx-auto">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h5>Termin zgłaszania filmów</h5>
+                    <p>15 listopada 2025</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h5>Data ogłoszenia nominacji</h5>
+                    <p>17 stycznia 2026</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h5>Ceremonia wręczenia nagród</h5>
+                    <p>8 marca 2026</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h5>Wydarzenia towarzyszące</h5>
+                    <ul>
+                        <li>Gale po Oscarach (8 marca 2026, wieczór)</li>
+                        <li>Pokazy specjalne, premiery filmów nominowanych (luty–marzec 2026)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h5>Terminy wydarzeń branżowych</h5>
+                    <ul>
+                        <li>Festiwal Filmowy w Wenecji: 27 sierpnia – 6 września 2025</li>
+                        <li>Festiwal w Toronto: 4–14 września 2025</li>
+                        <li>Warsztaty, konferencje filmowe: październik–grudzień 2025</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="kontakt" class="py-5 bg-light text-center" tabindex="0" aria-label="Formularz kontaktowy">
+    <div class="container">
+        <div class="publicznosc-box kontakt-box mx-auto p-4 p-md-5 my-4">
+            <h2>Kontakt</h2>
+            <form id="contact-form" action="https://formspree.io/f/mldngklq" method="POST">
+                <input type="text" name="name" class="form-control mb-2" placeholder="Imię" required aria-required="true">
+                <input type="email" name="email" class="form-control mb-2" placeholder="Email" required aria-required="true">
+                <textarea class="form-control mb-2" id="contact-message" placeholder="Wiadomość" rows="4" required aria-required="true"></textarea>
+                <input type="hidden" name="message" id="hidden-message">
+                <button type="submit" class="btn btn-primary odkryj-btn mt-4" id="discover-btn">
+                    Wyślij
+                    <img src="images/oscar-mini.png" alt="" class="oscar-icon" aria-hidden="true">
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+    <footer class="footer-custom py-4 text-white text-center">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div class="d-flex align-items-center justify-content-center mb-3 mb-md-0">
+            <img src="images/oscar-mini.png" alt="Oscar" class="footer-oscar me-2">
+            <span>&copy; 2025 Złote Kadry. Wszystkie prawa zastrzeżone.</span>
+        </div>
+        <div>
+            <a href="polityka-prywatnosci.html" class="footer-link text-white-50 me-3" target="_blank">Polityka prywatności</a>
+            <a href="#kontakt" class="footer-link text-white-50">Kontakt</a>
+        </div>
+    </div>
+</footer>
+
+<div id="cookie-banner" class="cookie-banner-custom">
+    <div class="d-flex align-items-center flex-nowrap gap-2 justify-content-center">
+        <img src="images/oscar-mini.png" alt="" class="cookie-oscar d-none d-md-inline">
+        <span>
+            Ta strona używa plików cookies, aby poprawić jakość użytkowania.
+            <a href="polityka-prywatnosci.html" target="_blank" class="cookie-link">Dowiedz się więcej</a>
+        </span>
+        <button id="accept-cookies" class="btn btn-primary odkryj-btn btn-sm ms-2" aria-label="Akceptuję pliki cookies">Akceptuję</button>
+        <button id="reject-cookies" class="btn btn-outline-secondary odkryj-btn btn-sm ms-2" aria-label="Odrzucam pliki cookies">Odrzuć</button>
+    </div>
+</div>
