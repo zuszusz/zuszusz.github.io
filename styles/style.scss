@@ -1,120 +1,56 @@
+//sass --watch styles/style.scss styles/style.css
+//GŁÓWNA STRONA - NAGŁÓWEK
+html {
+    color-scheme: only light; //ignoruje ciemny motyw i trzyma się jasnego
+    background: #fffbe7;
+}
+@media (prefers-color-scheme: dark) { //wykrywa, czy użytwkownik ma ustawiony ciemny motyw
+    //jeśli tak, to zmienia na jasny
+    html, body {
+        background: #fffbe7 !important;
+        color: #222 !important; //kolor tekstu
+    }
+    img, video { //niektóre przeglądarki od razu nakładają ciemny filtr, więc wyłączam go
+        filter: none !important; 
+    }
+}
 body{
-    margin:0;
-    text-align: right;
+    margin:0; //resetuje marginesy
+    text-align: right; 
     background:#e4e4ce;
     h1{
         text-align: center;
     }
 }
-.main-info-img {
+.main-info-img { //logo na stronie głównej
     width: 25em;
     height: 25em;
     margin-left: auto;
     margin-right: auto;
-    display: block;
+    display: block; 
 }
-.subtitle-icon {
+.subtitle-icon { //ikona pod tytułem
     width: 5em;
     height: 6em;
-    object-fit: contain;
-    display: inline-block;
+    object-fit: contain; 
+    display: inline-block; //wyświetla się obok tekstu
 }
 .custom-navbar {
     min-height: 5rem; //grubość paska na samej górze
-    padding: 0;
-    .navbar-brand {
+    padding: 0; //usuwa domyślne paddingi (wewnętrzny odstęp między zawartością elementu, a ramką)
+    .navbar-logo { //logo w pasku na samej górze
         width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
         img {
             width: 100%;
-            height: 6rem; //wysokość logo
+            height: 6rem; 
             object-fit: contain;
         }
     }
 }
-.gallery-img {
-    max-width: 100%;
-    height: 10em;
-    object-fit: cover;
-    border-radius: 1em;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-.podium-row {
-    min-height: 20em; // zamiast 320px, przy 16px = 320px, możesz zmienić na 18em lub 22em według potrzeb
-}
-.kategorie-bg {
-    background: #fffbe7;
-}
-.odkryj-btn {
-    position: relative;
-    overflow: visible;
-    padding-right: 1em; 
-    .oscar-icon {
-        position: absolute;
-        right: -1em; 
-        top: 50%;
-        transform: translateY(-50%);
-        height: 2.7em;
-        width: 2.7em;
-        object-fit: contain;
-        transition: transform 0.5s cubic-bezier(.4,2,.6,1), filter 0.5s;
-        filter: drop-shadow(0 0 0 transparent);
-        pointer-events: none;
-    }
-    &:hover, &:focus {
-        transform: translateY(-8px) scale(1.05);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-        .oscar-icon {
-            transform: translateY(-50%) translateX(50%) rotate(-10deg) scale(1.15);
-            filter: drop-shadow(0 0 8px gold);
-        }
-    }
-}
-.img-fluid,
-.rounded,
-.shadow {
-    transition: transform 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.4s cubic-bezier(.4,2,.6,1);
-}
-#galleryCarousel .carousel-control-prev-icon,
-#galleryCarousel .carousel-control-next-icon {
-    filter: none;
-    background-image: none;
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: transparent;
-    position: relative;
-}
-#galleryCarousel .carousel-control-prev-icon::after,
-#galleryCarousel .carousel-control-next-icon::after {
-    content: '';
-    display: block;
-    width: 2.5rem;
-    height: 2.5rem;
-    border: solid #e6c200;
-    border-width: 0 0.4em 0.4em 0;
-    padding: 0.3em;
-    position: absolute;
-    top: 0.3em;
-    left: 0.6em;
-    background: transparent;
-}
-#galleryCarousel .carousel-control-prev-icon::after {
-    transform: rotate(135deg);
-}
-#galleryCarousel .carousel-control-next-icon::after {
-    transform: rotate(-45deg);
-    left: 0.2em;
-}
-.img-fluid:hover,
-.rounded:hover,
-.shadow:hover {
-    transform: scale(1.07) translateY(-8px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.10);
-    z-index: 2;
-}
-.hero-section {
+.hero-section { //tło na stronie głównej
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
         url('../images/tlo-czarne.jpg') no-repeat center center;
@@ -125,324 +61,317 @@ body{
     justify-content: center;
     align-items: center;
 }
-.kategoria-karta {
+.odkryj-btn { //przycisk "Odkryj więcej"
+    position: relative; 
+    overflow: visible; 
+    padding-right: 1em; 
+    .oscar-icon {
+        position: absolute; 
+        right: -1em; 
+        top: 50%;
+        transform: translateY(-50%);
+        height: 2.7em;
+        width: 2.7em;
+        object-fit: contain;
+        transition: transform 0.5s cubic-bezier(.4,2,.6,1), filter 0.5s; //animacja małego Oscara
+        filter: drop-shadow(0 0 0 transparent); 
+        pointer-events: none;
+    }
+    &:hover, &:focus { //efekt po najechaniu/kliknięciu
+        transform: translateY(-0.5rem) scale(1.05);
+        box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.15);
+        .oscar-icon {
+            transform: translateY(-50%) translateX(50%) rotate(-10deg) scale(1.15);
+            filter: drop-shadow(0 0 0.5rem gold);
+        }
+    }
+}
+
+//TEGOROCZNA GALA
+.gallery-img { //zdjęcia w galerii (tegoroczna gala)
+    max-width: 100%;
+    height: 10em;
+    object-fit: cover;
+    border-radius: 1em; //zaokrąglenie rogów zdjęć
+    box-shadow: 0 0.125em 0.5em rgba(0,0,0,0.08); //cień pod zdjęciami
+}
+.img-fluid, 
+.rounded,
+.shadow { //animacje do zdjęć w galerii - przejście
+    transition: transform 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.4s cubic-bezier(.4,2,.6,1);
+}
+#galleryCarousel .carousel-control-prev-icon,
+#galleryCarousel .carousel-control-next-icon { //ikony strzałek przy galerii
+  filter: none;
+  background: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: relative;
+  border: solid #e6c200;
+  border-width: 0 0.4em 0.4em 0;
+  padding: 0.3em;
+  box-sizing: content-box;
+  display: block;
+}
+#galleryCarousel .carousel-control-prev-icon {
+  transform: rotate(135deg);
+}
+#galleryCarousel .carousel-control-next-icon {
+  transform: rotate(-45deg);
+  margin-left: 0.4em; 
+}
+.img-fluid:hover,
+.rounded:hover,
+.shadow:hover { //zmiana przy najechaniu kursorem na zdjęcie
+    transform: scale(1.07) translateY(-0.5em);
+    box-shadow: 0 0.75em 2em rgba(0,0,0,0.25), 0 0.125em 0.5em rgba(0,0,0,0.10);
+    z-index: 2;
+}
+
+//KATEGORIE
+.kategorie-bg {
+    background: #fffbe7;
+}
+.kategoria-karta { //ustawienia dla okienka/karty kategorii
   background: #fffbe7;
   border-radius: 1.2em;
   box-shadow: 0 0.2em 0.8em rgba(218,165,32,0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  overflow: hidden; /* żeby ikonka nie wychodziła poza kartę */
+  overflow: hidden; 
 }
-
-.kategoria-karta:hover {
+.kategoria-karta:hover { //po najechaniu
   transform: translateY(-0.3em);
   box-shadow: 0 0.4em 1em rgba(218,165,32,0.25);
 }
-
-.kategoria-karta h4 {
+.kategoria-karta h4 { //nagłówek kategorii
   margin-bottom: 0.5em;
 }
-
-.kategoria-karta ul {
+.kategoria-karta ul { //lista w kategorii
   padding-left: 0;
   color: #444;
   font-size: 1.05em;
 }
-.kategoria-karta .oscar-icon {
+.kategoria-karta .oscar-icon { //przezroczysta ikonka Oscara w tle
   position: absolute;
   top: 0;
   right: 0;
-  height: 100%;    /* rozciąga się na całą wysokość karty */
-  width: auto;     /* zachowuje proporcje */
-  opacity: 0.1;    /* delikatna przezroczystość */
-  pointer-events: none; /* żeby nie przeszkadzała w klikaniu */
+  height: 100%;    
+  width: auto;    
+  opacity: 0.1;    
+  pointer-events: none; 
   z-index: 1;
 }
-/* Żeby tekst był nad ikoną */
-.kategoria-karta > *:not(.oscar-icon) {
+.kategoria-karta > *:not(.oscar-icon) { //żeby wszystkie elementy poza ikoną Oscara były na przodzie
   position: relative;
   z-index: 2;
 }
-.podium-row {
-    min-height: 320px;
+
+//REKORDY
+.podium-row { //okienko dla schodka podiumn
+    min-height: 20em;
     margin-bottom: 2em;
 }
-.podium-step {
+.podium-step { //ustawienia dla schodka podiumn
     background: #fffbe7;
     border-radius: 1em 1em 0 0;
-    box-shadow: 0 4px 16px rgba(218,165,32,0.08);
+    box-shadow: 0 0.25em 1em rgba(218,165,32,0.08);
     padding: 1em 0.5em 0.5em 0.5em;
     width: 100%;
-    max-width: 220px;
+    max-width: 13.75em;
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center;
 }
-.podium-img {
+.podium-img { //zdjęcie w schodku podium
     width: 5em;
     height: 5em;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid #e6c200;
+    border: 0.19em solid #e6c200;
     margin-bottom: 0.5em;
     background: #fff;
 }
 .podium-img.step-2 {
-    border: 3px solid #b0a06e;
+    border: 0.19em solid #b0a06e; //zmiana koloru dla każdego schodka
 }
 .podium-img.step-3 {
-    border: 3px solid #b87333;
+    border: 0.19em solid #b87333;
 }
 .step-1 {
     margin-bottom: 0;
     z-index: 2;
-    box-shadow: 0 8px 24px rgba(218,165,32,0.15);
-    transform: translateY(-30px) scale(1.08);
-    border: 3px solid #e6c200;
+    box-shadow: 0 0.5em 1.5em rgba(218,165,32,0.15);
+    transform: translateY(-1.875em) scale(1.08);
+    border: 0.19em solid #e6c200;
 }
 .step-2 {
     z-index: 1;
-    transform: translateY(-10px) scale(0.98);
-    border: 2px solid #b0a06e;
+    transform: translateY(-0.625em) scale(0.98);
+    border: 0.125em solid #b0a06e;
 }
 .step-3 {
     z-index: 1;
     transform: translateY(0) scale(0.95);
-    border: 2px solid #b87333;
+    border: 0.125em solid #b87333;
 }
-#prediction-form .form-control {
+
+//GŁOS PUBLICZNOŚCI
+#prediction-form .form-control { //formularz do wysłania głosu
     max-width: 28em;
     min-height: 4em;
     margin-left: auto;
     margin-right: auto;
     border-radius: 1em;
-    border: 2px solid #e6c200;
+    border: 0.125em solid #e6c200;
     background: #fffbe7;
     color: #444;
     font-size: 1.1em;
-    box-shadow: 0 2px 8px rgba(218,165,32,0.08);
+    box-shadow: 0 0.125em 0.5em rgba(218,165,32,0.08);
     transition: border-color 0.3s, box-shadow 0.3s;
 }
-#prediction-form .form-control:focus {
+#prediction-form .form-control:focus { //efekt po kliknięciu na "Twoje przewidywania"
     border-color: #bfa100;
-    box-shadow: 0 0 0 0.2rem rgba(230,194,0,0.15);
+    box-shadow: 0 0 0 0.2em rgba(230,194,0,0.15);
     background: #fffde4;
     outline: none;
 }
-
 #prediction-form .btn-primary {
-    background: linear-gradient(90deg, #e6c200 60%, #fffbe7 100%);
+    background: linear-gradient(90deg, #e6c200 60%, #fffbe7 100%); //przycisk do wysłania głosu
     color: #5a4300;
     border: none;
     border-radius: 1em;
     font-weight: 600;
     padding: 0.7em 2.2em;
-    box-shadow: 0 2px 8px rgba(218,165,32,0.10);
+    box-shadow: 0 0.125em 0.5em rgba(218,165,32,0.10);
     margin-top: 0.5em;
 }
 #prediction-form .btn-primary:hover, 
-#prediction-form .btn-primary:focus {
-    background: linear-gradient(90deg, #fffbe7 0%, #e6c200 100%);
+#prediction-form .btn-primary:focus { //efekt po najechaniu na przycisk
+    background: linear-gradient(90deg, #fffbe7 0%, #e6c200 100%); 
     color: #a07c00;
-    transform: translateY(-2px) scale(1.04);
+    transform: translateY(-0.125em) scale(1.04);
 }
-#glosy {
+#glosy { 
     position: relative;
     overflow: hidden;
     background: none;
 }
-#glosy::before {
+#glosy::before { //dodanie tła z Oscarem
     content: "";
     position: absolute;
     inset: 0;
     background: url('../images/oscar-mini.png') center center/contain no-repeat;
-    opacity: 0.13; // możesz zmienić na 0.15–0.22 według uznania
+    opacity: 0.13; 
     z-index: 0;
     pointer-events: none;
 }
-.publicznosc-box {
+.glosy-box { //duże okienko 
     position: relative;
     z-index: 1;
-    background: rgba(255,251,231,0.96); // lekko złota karta, jak w kategoriach
+    background: rgba(255,251,231,0.96); 
     border-radius: 1.5em;
-    box-shadow: 0 4px 24px rgba(218,165,32,0.10);
-    border: 2px solid #e6c200;
-    max-width: 540px;
+    box-shadow: 0 0.25em 1.5em rgba(218,165,32,0.10);
+    border: 0.125em solid #e6c200;
+    max-width: 33.75em;
     margin-left: auto;
     margin-right: auto;
 }
 #glosy .container,
 #glosy form,
-#glosy * {
+#glosy * { 
     position: relative;
     z-index: 1;
 }
-.timeline {
+
+//TERMINARZ
+.timeline { //ustawianie stylu dla osi czasu/terminarza
     position: relative;
-    max-width: 700px;
+    max-width: 43.75em;
     margin: 0 auto;
     padding-left: 2.5em;
-    border-left: 3px solid #e6c200;
+    border-left: 0.19em solid #e6c200;
 }
-.timeline-item {
+.timeline-item { 
     position: relative;
     margin-bottom: 2.5em;
 }
-.timeline-dot {
+.timeline-dot { //kropki na osi czasu z lewej strony
     position: absolute;
     left: -1.25em;
     top: 0.3em;
     width: 1.2em;
     height: 1.2em;
     background: #fffbe7;
-    border: 3px solid #e6c200;
+    border: 0.19em solid #e6c200;
     border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(218,165,32,0.10);
+    box-shadow: 0 0.125em 0.5em rgba(218,165,32,0.10);
 }
-.timeline-content {
+.timeline-content { //zawartość osi czasu
     background: #fff;
     border-radius: 1em;
     padding: 1em 1.5em;
-    box-shadow: 0 2px 8px rgba(218,165,32,0.08);
+    box-shadow: 0 0.125em 0.5em rgba(218,165,32,0.08);
     margin-left: 0.5em;
 }
-.timeline-content h5 {
+.timeline-content h5 { //nagłówki w osi czasu
     color: #bfa100;
     font-weight: 700;
 }
-.timeline-content ul {
+.timeline-content ul { //lista w zawartości osi czasu
     margin-bottom: 0;
     padding-left: 1.2em;
 }
-.kontakt-box {
-    max-width: 800px;
+
+//KONTAKT
+.kontakt-box { //okienko do kontaktu
+    max-width: 50em;
 }
-.btn-primary, .odkryj-btn {
+.btn-primary, .odkryj-btn { //użycie tego samego przycisku, co przy nagłówku
     background: #e6c200;
     color: #5a4300;
     border: none;
     border-radius: 1em;
     font-weight: 600;
     padding: 0.7em 2.2em;
-    box-shadow: 0 2px 8px rgba(218,165,32,0.10);
-    /* Dodaj aby obniżyć napis względem ikony */
+    box-shadow: 0 0.125em 0.5em rgba(218,165,32,0.10);
     display: inline-flex;
-    align-items: flex-end; // napis niżej względem ikony
+    align-items: flex-end; 
     gap: 0.5em;
-    margin-top: 2.5em; // większy odstęp od pól formularza
+    margin-top: 2.5em; 
     transition: background 0.3s, color 0.3s;
 }
 .btn-primary:hover, .odkryj-btn:hover,
-.btn-primary:focus, .odkryj-btn:focus {
+.btn-primary:focus, .odkryj-btn:focus { 
     background: #bfa100;
     color: #fff;
 }
-.footer-custom {
+
+//STOPKA
+.footer-custom { //ustawienia stylu dla footera
     background: linear-gradient(90deg, #e6c200 0%, #fffbe7 100%);
     color: #5a4300;
-    border-top: 2px solid #e6c200;
+    border-top: 0.125em solid #e6c200;
     font-weight: 500;
     letter-spacing: 0.03em;
 }
-.footer-oscar {
+.footer-oscar { //ikonka Oscara w stopce
     width: 3em;
     height: 5em;
     margin-right: 0.5em;
 }
-.footer-link {
-    color: #5a4300;
-    text-decoration: underline dotted;
-    transition: color 0.2s;
-}
-.footer-link:hover {
-    color: #bfa100;
-    text-decoration: underline solid;
-}
-.cookie-banner {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 9999;
-    background: #fffbe7;
-    border-top: 2px solid #e6c200;
-    box-shadow: 0 -2px 16px rgba(218,165,32,0.10);
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.7em;
-    padding: 1.2em 0.5em 1.2em 0.5em;
-}
 
-.cookie-oscar {
-    width: 6em;
-    height: 8em;
-}
-
-.cookie-banner .cookie-text {
-    margin-bottom: 0.7em;
-    font-size: 1.08em;
-}
-
-.cookie-banner .btn-primary,
-.cookie-banner .btn-outline-secondary {
-    height: 2.5em;
-    min-width: 7em;
-    padding: 0 1.5em;
-    border-radius: 1em;
-    font-weight: 600;
-    display: inline-flex;      // Uwaga: zmiana na inline-flex!
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    line-height: 1;           // Uwaga: zmiana na 1!
-    margin: 0;
-    box-sizing: border-box;
-    border-width: 2px;
-    transition: background-color 0.3s, color 0.3s;
-    vertical-align: middle;   // Dodane!
-}
-
-.cookie-banner .btn-primary {
-    background: #e6c200;
-    color: #5a4300;
-    border: none;
-    box-shadow: 0 2px 8px rgba(218,165,32,0.10);
-}
-
-.cookie-banner .btn-primary:hover {
-    background: #bfa100;
-    color: #fff;
-}
-
-.cookie-banner .btn-outline-secondary {
-    border: 2px solid #e6c200;
-    color: #bfa100;
-    background: transparent;
-    box-shadow: none;
-}
-
-.cookie-banner .btn-outline-secondary:hover {
-    background: #e6c200;
-    color: #fff;
-}
-/* Ukrycie logo Google i niepotrzebnych elementów */
-.goog-logo-link,
-.goog-te-gadget span {
-    display: none !important;
-}
-
-.goog-te-gadget {
+//TŁUMACZENIE-GOOGLE
+.goog-te-gadget { //wygląd widgeta tłumacza Google
     color: #bfa100 !important;
     font-family: inherit !important;
     font-weight: 600 !important;
-    text-align: right; /* wyśrodkowanie w obrębie prawej części stopki */
+    text-align: right; 
 }
-
-.goog-te-combo {
+.goog-te-combo { //wygląd rozwijanego menu Googla
     border-radius: 0.7em;
-    border: 1.5px solid #e6c200;
+    border: 0.09em solid #e6c200;
     padding: 0.3em 1em;
     background: #fffbe7;
     color: #5a4300;
@@ -450,16 +379,14 @@ body{
     font-size: 1em;
     margin: 0 !important;
 }
-
-body .goog-te-banner-frame.skiptranslate {
+//ukrywanie banera u góry strony
+body .goog-te-banner-frame.skiptranslate { 
     display: none !important;
 }
-
-body {
+body { 
     top: 0 !important;
 }
-
-body .goog-te-banner-frame.skiptranslate {
+body .goog-te-banner-frame.skiptranslate { 
     display: none !important;
 }
 body {
@@ -471,7 +398,7 @@ body > .skiptranslate {
     height: 0 !important;
     visibility: hidden !important;
 }
-html {
+html { 
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
 }
