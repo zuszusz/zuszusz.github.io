@@ -86,7 +86,7 @@ body h1 {
 }
 .odkryj-btn:hover .oscar-icon, .odkryj-btn:focus .oscar-icon {
   transform: translateY(-50%) translateX(50%) rotate(-10deg) scale(1.15);
-  filter: drop-shadow(0 0 0.5rem gold);
+  filter: drop-shadow(0 0 1.5rem gold);
 }
 
 .gallery-img {
@@ -434,6 +434,18 @@ body > .skiptranslate {
 html {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
+}
+
+html, body, * {
+  background-color: #fffbe7 !important;
+  color: #222 !important;
+  -webkit-text-fill-color: #222 !important;
+  -webkit-background-color: #fffbe7 !important;
+  box-shadow: none !important;
+}
+
+img, video {
+  filter: none !important;
 }
 
 /*# sourceMappingURL=style.css.map */
