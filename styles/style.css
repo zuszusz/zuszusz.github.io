@@ -24,6 +24,7 @@ body h1 {
 .main-info-img {
   width: 25em;
   height: 25em;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   display: block;
