@@ -66,6 +66,7 @@ body{
     position: relative; 
     overflow: visible; 
     padding-right: 1em; 
+    transition: transform 0.5s cubic-bezier(.4,2,.6,1), box-shadow 0.5s cubic-bezier(.4,2,.6,1); 
     .oscar-icon {
         position: absolute; 
         right: -1em; 
@@ -79,7 +80,6 @@ body{
         pointer-events: none;
     }
     &:hover, &:focus { //efekt po najechaniu/kliknięciu
-        transform: translateY(-0.5rem) scale(1.05);
         box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.15);
         .oscar-icon {
             transform: translateY(-50%) translateX(50%) rotate(-10deg) scale(1.15);
@@ -226,7 +226,7 @@ body{
     margin-right: auto;
     border-radius: 1em;
     border: 0.125em solid #e6c200;
-    background: #fffbe7;
+    background: #fffde4;
     color: #444;
     font-size: 1.1em;
     box-shadow: 0 0.125em 0.5em rgba(218,165,32,0.08);

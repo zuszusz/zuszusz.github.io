@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
       offset: offset
     });
   }
+  //aby ikonka małego oscara wracała na miejsce po kliknięciu
+  document.querySelectorAll('.odkryj-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.blur();
+  });
+});
   //przy wysyłaniu formularzy kontaktu łączy wartości ze wszystkich pól w całość, żeby wysłać je w jednym polu do Formspree i czyści po naciśnięciu "Wyślij"
   const contactForm = document.getElementById('contact-form'); 
   if (contactForm) {

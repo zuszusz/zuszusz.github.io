@@ -68,6 +68,7 @@ body h1 {
   position: relative;
   overflow: visible;
   padding-right: 1em;
+  transition: transform 0.5s cubic-bezier(0.4, 2, 0.6, 1), box-shadow 0.5s cubic-bezier(0.4, 2, 0.6, 1);
 }
 .odkryj-btn .oscar-icon {
   position: absolute;
@@ -82,7 +83,6 @@ body h1 {
   pointer-events: none;
 }
 .odkryj-btn:hover, .odkryj-btn:focus {
-  transform: translateY(-0.5rem) scale(1.05);
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
 }
 .odkryj-btn:hover .oscar-icon, .odkryj-btn:focus .oscar-icon {
@@ -242,7 +242,7 @@ body h1 {
   margin-right: auto;
   border-radius: 1em;
   border: 0.125em solid #e6c200;
-  background: #fffbe7;
+  background: #fffde4;
   color: #444;
   font-size: 1.1em;
   box-shadow: 0 0.125em 0.5em rgba(218, 165, 32, 0.08);
